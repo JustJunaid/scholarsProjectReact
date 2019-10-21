@@ -7,7 +7,6 @@ const Stats = ({scholarsData}) => {
     for (let i=1; i<16; i++) {
       rowsArray.push(scholarsData[i] ? scholarsData[i].length : 0)
     }
-    console.log('rowsArray', rowsArray)
     const data = {
       labels: ['1st Century', '2nd Century', '3rd Century', '4th Century', '5th Century', '6th Century', '7th Century', '8th Century', '9th Century', '10th Century', '11th Century', '12th Century', '13th Century', '14th Century', '15th Century'],
       datasets: [{

@@ -45,7 +45,7 @@ const FeedbackPage = () => {
             <textarea name="feedbackValue" onChange={handleChange} className="form-control" id="exampleFormControlTextarea1" rows="4" required ></textarea>
           </div>
           <Recaptcha
-            sitekey={process.env.RECAPTCHA_SITEKEY}
+            sitekey={"6LdOo74UAAAAAL-eQR5HFw29GsKTxh3FHdGyNgcY"}
             render="explicit"
             verifyCallback={verifyCallback}
             // onloadCallback={onloadCallback}
