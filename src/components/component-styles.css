@@ -1,0 +1,15 @@
+.spinner-border {
+    color: #94e4e4;
+    margin-top: 15rem;
+    height: 4rem;
+    width: 4rem;
+}
+
+thead tr th:first-child,
+ tbody tr td:first-child {
+  width: 67%;
+ }
+
+a.centuryLink {
+    color: #000;
+}
