@@ -4,7 +4,6 @@ import { Container, Row, Col } from 'react-bootstrap'
 import './component-styles.css'
 
 const HomePage = ({ scholarsData }) => {
-  console.log('scholarsData', scholarsData)
   const final = Object.values(scholarsData)
   return (
     <>

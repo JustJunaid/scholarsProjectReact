@@ -10,13 +10,10 @@ const FeedbackPage = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    const response = await axios.post('https://us-central1-scholarproject-8c03a.cloudfunctions.net/widgets/sendFeedbackMail', {
+    await axios.post('https://us-central1-scholarproject-8c03a.cloudfunctions.net/widgets/sendFeedbackMail', {
       ...formData
     })
-    console.log('response', response)
   }
-
-  const onloadCallback = () => console.log('captcha onload callback')
 
   const verifyCallback = () => {
     setNotVerified(false)
@@ -48,10 +45,10 @@ const FeedbackPage = () => {
             <textarea name="feedbackValue" onChange={handleChange} className="form-control" id="exampleFormControlTextarea1" rows="4" required ></textarea>
           </div>
           <Recaptcha
-            sitekey="6LcHqrwUAAAAAG5VcboeVsvRShLxXA824Qq8eiOu"
+            sitekey={process.env.RECAPTCHA_SITEKEY}
             render="explicit"
             verifyCallback={verifyCallback}
-            onloadCallback={onloadCallback}
+            // onloadCallback={onloadCallback}
           />
           <Button variant="primary" type="submit" disabled={notVerified}>
             Submit

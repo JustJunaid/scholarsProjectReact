@@ -20,7 +20,6 @@ export const getFirebaseData = async () => {
         scholarDataPerCentury = [...scholarDataPerCentury, doc.data()]
       });
       scholarsDataObj[century] = scholarDataPerCentury
-      console.log('scholarsDataObj', scholarsDataObj)
     }
     return scholarsDataObj
 }
