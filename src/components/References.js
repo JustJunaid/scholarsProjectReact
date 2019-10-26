@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import { Jumbotron, ListGroup } from 'react-bootstrap';
+import { Jumbotron } from 'react-bootstrap';
 
 export default function References() {
     return (
@@ -69,12 +69,10 @@ export default function References() {
                     <li>al-Zurārī, Abū Ghālib. Risālat Abī Ghālib al-Zurārī (Qum: Intishārāt-i Daftar-i Tablighāt, 1411/1990)</li>
                 </ul>
                 <p>Digital Reference and Encyclopaedia:</p>
-                <ListGroup  style={{width: 'max-content', }}>
-                    <ListGroup.Item><a href="http://en.wikishia.net/view/Main_Page">http://en.wikishia.net/view/Main_Page</a></ListGroup.Item>
-                    <ListGroup.Item>Encyclopaedia of Islam, 1st, 2nd and 3rd editions</ListGroup.Item>
-                    <ListGroup.Item>Dāʿirat al-maʿārif-i buzurg-i Islāmī </ListGroup.Item>
-                    <ListGroup.Item>Dānishnāme-i jahān-i Islām</ListGroup.Item>
-                </ListGroup>
+                <p><a target="_blank" href="http://en.wikishia.net/view/Main_Page">http://en.wikishia.net/view/Main_Page</a></p>
+                <p>Encyclopaedia of Islam, 1st, 2nd and 3rd editions</p>
+                <p>Dāʿirat al-maʿārif-i buzurg-i Islāmī </p>
+                <p>Dānishnāme-i jahān-i Islām</p>
             </Jumbotron>
         </>
     )

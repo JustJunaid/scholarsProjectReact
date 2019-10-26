@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom'
 import './App.css';
 import HomePage from './components/index'
@@ -12,7 +12,7 @@ const isEqual = require('lodash.isequal')
 
 export const getFirebaseData = async () => {
   let scholarsDataObj = {}
-    for (let century=1; century<=15; century++) {
+    for (let century=2; century<=15; century++) {
       const colRef = firestore.collection(`${century}`)
       const snapshot = await colRef.get()
       let scholarDataPerCentury = []
@@ -53,7 +53,7 @@ const App = () => {
       <Route exact path='/' component={() => <HomePage scholarsData={scholarsData} />} />
       <Route exact path='/stats' component={() => <Stats scholarsData={scholarsData} />} />
       <Route exact path='/feedback' component={FeedbackPage} />
-      <Route exact path='/references' component={References} />
+      <Route exact path='/bibliography' component={References} />
       <Route exact path='/introduction' component={Introduction} />
     </div>
   );

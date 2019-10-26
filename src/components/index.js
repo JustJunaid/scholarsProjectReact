@@ -4,6 +4,14 @@ import { Container, Row, Col } from 'react-bootstrap'
 import './component-styles.css'
 
 const HomePage = ({ scholarsData }) => {
+  const special = ['zeroth','first', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Seventh', 'Eighth', 'Ninth', 'Tenth', 'Eleventh', 'Twelfth', 'Thirteenth', 'Fourteenth', 'Fifteenth', 'sixteenth', 'seventeenth', 'eighteenth', 'nineteenth'];
+  const deca = ['twent', 'thirt', 'fort', 'fift', 'sixt', 'sevent', 'eight', 'ninet'];
+
+  const stringifyNumber = n => {
+    if (n < 20) return special[n];
+    if (n%10 === 0) return deca[Math.floor(n/10)-2] + 'ieth';
+    return deca[Math.floor(n/10)-2] + 'y-' + special[n%10];
+  }
   const final = Object.values(scholarsData)
   return (
     <>
@@ -14,20 +22,20 @@ const HomePage = ({ scholarsData }) => {
           <Col xs={2} style={{height: '93vh', overflow: 'scroll', backgroundColor: '#f8f9fa'}}>
           <h4>Centuries</h4>
             {
-              final.map((_, i) => <p key={i}><a className="centuryLink" href={`#${i+1}`}>{i+1}</a></p>)
+              final.map((_, i) => <p key={i}><a className="centuryLink" href={`#${i+2}`}>{i+2} / {i+8}</a></p>)
             }
           </Col>
           <Col style={{height: '93vh', overflow: 'scroll'}}>
             {
               final.map((arr, i) => {
                 return (
-                  <div id={i+1}>
-                    <h2><span class="badge badge-light">Century Number : {i+1}</span></h2>
-                    <table class="table table-striped">
+                  <div id={i+2}>
+                    <h2><span className="badge badge-light">{stringifyNumber(i+2)} century</span></h2>
+                    <table className="table table-striped">
                       <thead>
                         <tr>
-                          <th scope="col">Scholar Name</th>
-                          <th scope="col">More Information</th>
+                          <th scope="col">Scholar</th>
+                          <th scope="col">Death</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -53,8 +61,8 @@ const HomePage = ({ scholarsData }) => {
       </Container>
       ) : (
         <div style={{textAlign: 'center'}}>
-          <div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
+          <div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
           </div>
         </div>
       )}

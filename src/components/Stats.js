@@ -4,11 +4,11 @@ import NavbarComponent from "./Navbar";
 
 const Stats = ({scholarsData}) => {
     let rowsArray = []
-    for (let i=1; i<16; i++) {
+    for (let i=2; i<16; i++) {
       rowsArray.push(scholarsData[i] ? scholarsData[i].length : 0)
     }
     const data = {
-      labels: ['1st Century', '2nd Century', '3rd Century', '4th Century', '5th Century', '6th Century', '7th Century', '8th Century', '9th Century', '10th Century', '11th Century', '12th Century', '13th Century', '14th Century', '15th Century'],
+      labels: ['2nd Century', '3rd Century', '4th Century', '5th Century', '6th Century', '7th Century', '8th Century', '9th Century', '10th Century', '11th Century', '12th Century', '13th Century', '14th Century', '15th Century'],
       datasets: [{
           label: '# of Scholars',
           data: rowsArray,
