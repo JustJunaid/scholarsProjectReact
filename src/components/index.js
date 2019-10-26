@@ -19,13 +19,13 @@ const HomePage = ({ scholarsData }) => {
       {final.length > 0 ? (
       <Container fluid={true} style={{position: 'fixed'}}>
           <Row>
-          <Col xs={2} style={{height: '93vh', overflow: 'scroll', backgroundColor: '#f8f9fa'}}>
+          <Col xs={2} style={{height: 'calc(100vh - 96px)', overflow: 'scroll', backgroundColor: '#f8f9fa'}}>
           <h4>Centuries</h4>
             {
               final.map((_, i) => <p key={i}><a className="centuryLink" href={`#${i+2}`}>{i+2} / {i+8}</a></p>)
             }
           </Col>
-          <Col style={{height: '93vh', overflow: 'scroll'}}>
+          <Col style={{height: 'calc(100vh - 96px)', overflow: 'scroll'}}>
             {
               final.map((arr, i) => {
                 return (
