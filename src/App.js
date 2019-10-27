@@ -33,9 +33,9 @@ const App = () => {
     if (localStorageData) {
       const parsedData = JSON.parse(localStorageData)
       setScholarsData(parsedData)
-      const newScholarsDataObj = await getFirebaseData()
-      if (isEqual(newScholarsDataObj, parsedData)) return
-      setScholarsData(newScholarsDataObj)
+      // const newScholarsDataObj = await getFirebaseData()
+      // if (isEqual(newScholarsDataObj, parsedData)) return
+      // setScholarsData(newScholarsDataObj)
       return
     }
 

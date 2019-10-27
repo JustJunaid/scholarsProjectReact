@@ -16,25 +16,28 @@ const HomePage = ({ scholarsData }) => {
   return (
     <>
       <Navbar />
+      <div className="introHeading">
+        <h4 style={{display: 'inline-block'}}>Shii Dates</h4> ~ <span>Collected, arranged and managed by Kumail Rajani</span>
+      </div>
       {final.length > 0 ? (
       <Container fluid={true} style={{position: 'fixed'}}>
           <Row>
-          <Col xs={2} style={{height: 'calc(100vh - 96px)', overflow: 'scroll', backgroundColor: '#f8f9fa'}}>
+          <Col xs={2} style={{height: 'calc(100vh - 196px)', overflow: 'scroll', backgroundColor: '#f8f9fa'}}>
           <h4>Centuries</h4>
             {
-              final.map((_, i) => <p key={i}><a className="centuryLink" href={`#${i+2}`}>{i+2} / {i+8}</a></p>)
+              final.map((_, i) => <p key={i}><a className="centuryLink" href={`#${i+2}`}>{i+2}/{i+8}</a></p>)
             }
           </Col>
-          <Col style={{height: 'calc(100vh - 96px)', overflow: 'scroll'}}>
+          <Col style={{height: 'calc(100vh - 196px)', overflow: 'scroll'}}>
             {
               final.map((arr, i) => {
                 return (
                   <div id={i+2}>
-                    <h2><span className="badge badge-light">{stringifyNumber(i+2)} century</span></h2>
+                    <h2><span className="badge badge-light">{stringifyNumber(i+2)}/{stringifyNumber(i+8)} century</span></h2>
                     <table className="table table-striped">
                       <thead>
                         <tr>
-                          <th scope="col">Scholar</th>
+                          <th scope="col">Name</th>
                           <th scope="col">Death</th>
                         </tr>
                       </thead>

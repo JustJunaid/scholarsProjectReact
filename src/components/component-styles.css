@@ -13,3 +13,37 @@ thead tr th:first-child,
 a.centuryLink {
     color: #000;
 }
+
+.introSignature {
+    margin-top: -10px;
+}
+
+.erclogo {
+    height: 200px;
+    margin-bottom: -50px;
+    margin-top: -20px;
+}
+
+.introHeading {
+    background-color: rgb(248, 249, 250);
+    padding: 0 15px;
+}
+
+#container {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+#navi,
+#infoi {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#infoi {
+    z-index: 10;
+}

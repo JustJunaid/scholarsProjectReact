@@ -7,7 +7,7 @@ export default function NavbarComponent() {
   return (
     <div>
       <Navbar bg="light" className="navbar-fixed-top" variant="light" expand="lg">
-        {/* <Link class="navbar-brand" to="/"><img src={Logo} style={{height: 90}}  alt="Logo"/></Link> */}
+        <Link className="navbar-brand" to="/">HOME</Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto"></Nav>
@@ -26,7 +26,7 @@ export default function NavbarComponent() {
             </li>
           </Nav>
         </Navbar.Collapse>
-        <Link className="navbar-brand" to="/"><img src={Logo} style={{height: 70}}  alt="Logo"/></Link>
+        <Link className="navbar-brand" to="/"><img src={Logo} className="erclogo" alt="Logo"/></Link>
     </Navbar>
     </div>
   )

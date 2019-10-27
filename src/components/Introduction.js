@@ -1,15 +1,14 @@
 import React from 'react'
 import Navbar from './Navbar'
 import { Jumbotron } from 'react-bootstrap';
+import './component-styles.css'
 
 export default function Introduction() {
     return (
         <>
             <Navbar />
             <Jumbotron style={{backgroundColor: '#fff'}}>
-                {/* <h1>Introduction to Shii Dates</h1> */}
-                <h1>Shii Dates</h1>
-                <h6>designed (? collected) and managed by Kumail Rajani </h6>
+                <h1>Introduction to Shii Dates</h1>
                 <p>This database is a result of my interest in studying Shiʿi generations of scholars (ṭabaqāt lit. layers) which record their biographical information arranged in a specific order. Over a period of years, I collected and arranged, for my personal reference, a work-in-progress list of Shiʿite scholars spanning fourteen centuries arranging them in a chronological order of the year of their death. I had two primary aims: first, to acquaint myself with the senior and contemporary colleagues of a given scholar and second, to examine the intellectual milieu in which a particular scholar was trained to further decipher what informed her thoughts, in which discussions she engaged and who were her potential interlocuters? This collection has been a point of reference for my various research works. Hoping that it shall benefit others too, I am making it accessible for my colleagues. A special thanks to Professor Robert Gleave for sponsoring this venture through <a target="_blank" href="http://www.lawalisi.eu">LAWALISI</a>  project. </p>
                 <p>At the outset, let me emphasis on what to expect and what not to expect from this project.</p>
                 <ul>
@@ -23,13 +22,13 @@ export default function Introduction() {
                     <li>In the interest of consistency, the transliteration for the names is Arabicised, even for the Persian names. For instance, Sayyid is converted to al-Sayyid and Bārfurūsh is converted to al-Bārfurūshī. </li>
                     <li>The list encompasses Shiʿite scholars from Bahrain, Indian subcontinent, Iraq, Iran, Kuwait, Lebanon, Syria, amongst few other regions without making any distinction of their Akhbārī, Uṣūlī, Shaykhī or any other doctrinal or jurisprudential tendencies. There might be scholars whose are perceived to be Sunnis or their Shiʿi adherence is questionable. I have included them owning the fact that they have contributed and participated in the Shiʿi intellectual tradition. </li>
                 </ul>
-                <p>I look forward to reading your comments, feedback and, most importantly, corrections via shiidates@shiidates.com.</p>
-                <p>Kumail Rajani</p>
-                <p>Research Fellow</p>
-                <p>Institute of Arab and Islamic Studies</p>
-                <p>University of Exeter</p>
-                <p>Stocker Road, Exeter, EX4 4ND.</p>
-                <p>Law, Authority and Learning in Imami Shiʿite Islam: <a target="_blank" href="http://www.lawalisi.eu">www.lawalisi.eu</a></p>
+                <p>I look forward to reading your comments, feedback and, most importantly, corrections via shiidates@shiidates.net.</p>
+                <p className="introSignature">Kumail Rajani</p>
+                <p className="introSignature">Research Fellow</p>
+                <p className="introSignature">Institute of Arab and Islamic Studies</p>
+                <p className="introSignature">University of Exeter</p>
+                <p className="introSignature">Stocker Road, Exeter, EX4 4ND.</p>
+                <p className="introSignature">Law, Authority and Learning in Imami Shiʿite Islam: <a target="_blank" href="http://www.lawalisi.eu">www.lawalisi.eu</a></p>
             </Jumbotron>
         </>
     )
