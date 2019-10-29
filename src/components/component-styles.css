@@ -36,6 +36,7 @@ div.rowHomePage {
 }
 
 .centuriesColumn {
+    flex: 0 0 10%;
     height: calc(100vh - 95px);
     overflow: scroll;
     background-color: #eeddbb;
