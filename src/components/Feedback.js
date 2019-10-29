@@ -3,6 +3,7 @@ import Recaptcha from 'react-recaptcha'
 import { Container, Button, Form } from 'react-bootstrap'
 import Navbar from './Navbar'
 import axios from 'axios'
+import Logo from '../assets/logo.svg'
 
 const FeedbackPage = () => {
   const [notVerified, setNotVerified] = useState(true)
@@ -27,33 +28,40 @@ const FeedbackPage = () => {
     <>
       <Navbar />
       <Container style={{margin: '40px auto auto auto', width: '60%'}}>
-        <form onSubmit={onSubmit} method="GET">
-          <Form.Group controlId="formBasicName">
-            <Form.Label>Name</Form.Label>
-            <Form.Control name="name" onChange={handleChange} type="text" placeholder="Enter Name" required />
-          </Form.Group>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control name="email" onChange={handleChange} type="email" placeholder="Enter email" required />
-          </Form.Group>
-          <Form.Group controlId="formBasicCountry">
-            <Form.Label>Country</Form.Label>
-            <Form.Control name="country" onChange={handleChange} type="text" placeholder="Enter country" required />
-          </Form.Group>
-          <div className="form-group">
-            <label for="exampleFormControlTextarea1">Enter Your Feedback here!</label>
-            <textarea name="feedbackValue" onChange={handleChange} className="form-control" id="exampleFormControlTextarea1" rows="4" required ></textarea>
+        <div className="row">
+          <div className="col-9">
+            <form onSubmit={onSubmit} method="GET">
+              <Form.Group controlId="formBasicName">
+                <Form.Label>Name</Form.Label>
+                <Form.Control name="name" onChange={handleChange} type="text" placeholder="Enter Name" required />
+              </Form.Group>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control name="email" onChange={handleChange} type="email" placeholder="Enter email" required />
+              </Form.Group>
+              {/* <Form.Group controlId="formBasicCountry">
+                <Form.Label>Country</Form.Label>
+                <Form.Control name="country" onChange={handleChange} type="text" placeholder="Enter country" required />
+              </Form.Group> */}
+              <div className="form-group">
+                <label for="exampleFormControlTextarea1">Enter Your Feedback here!</label>
+                <textarea name="feedbackValue" onChange={handleChange} className="form-control" id="exampleFormControlTextarea1" rows="4" required ></textarea>
+              </div>
+              <Recaptcha
+                sitekey={"6LdOo74UAAAAAL-eQR5HFw29GsKTxh3FHdGyNgcY"}
+                render="explicit"
+                verifyCallback={verifyCallback}
+                // onloadCallback={onloadCallback}
+              />
+              <Button variant="primary" type="submit" disabled={notVerified}>
+                Submit
+              </Button>
+            </form>
           </div>
-          <Recaptcha
-            sitekey={"6LdOo74UAAAAAL-eQR5HFw29GsKTxh3FHdGyNgcY"}
-            render="explicit"
-            verifyCallback={verifyCallback}
-            // onloadCallback={onloadCallback}
-          />
-          <Button variant="primary" type="submit" disabled={notVerified}>
-            Submit
-          </Button>
-        </form>
+          <div className="col-3">
+            <img src={Logo} className="erclogo" alt="Logo"/>
+          </div>
+        </div>
       </Container>
     </>
   )

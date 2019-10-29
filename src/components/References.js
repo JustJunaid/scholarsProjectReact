@@ -68,8 +68,8 @@ export default function References() {
                     <li>al-Zunūzī, Muḥammad Ḥasan b. ʿAbd al-Rasūl al-Ḥusaynī. Riyāḍ al-janna min al-rawḍa al-rābiʿa ed. ʿAlī Rafīʿī (Qum: Maktabat Āyatullāh Marʿashī Najafī, 1370sh/1991)</li>
                     <li>al-Zurārī, Abū Ghālib. Risālat Abī Ghālib al-Zurārī (Qum: Intishārāt-i Daftar-i Tablighāt, 1411/1990)</li>
                 </ul>
-                <p className="introSignature"><b>Digital Reference and Encyclopaedia:</b></p>
-                <p className="introSignature"><a target="_blank" href="http://en.wikishia.net/view/Main_Page">http://en.wikishia.net/view/Main_Page</a></p>
+                <h1>Digital Reference and Encyclopaedia</h1>
+                <p><a target="_blank" href="http://en.wikishia.net/view/Main_Page">http://en.wikishia.net/view/Main_Page</a></p>
                 <p className="introSignature">Encyclopaedia of Islam, 1st, 2nd and 3rd editions</p>
                 <p className="introSignature">Dāʿirat al-maʿārif-i buzurg-i Islāmī </p>
                 <p className="introSignature">Dānishnāme-i jahān-i Islām</p>

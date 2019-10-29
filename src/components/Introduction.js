@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import { Jumbotron } from 'react-bootstrap';
 import './component-styles.css'
+import Logo from '../assets/logo.svg'
 
 export default function Introduction() {
     return (
@@ -22,13 +23,26 @@ export default function Introduction() {
                     <li>In the interest of consistency, the transliteration for the names is Arabicised, even for the Persian names. For instance, Sayyid is converted to al-Sayyid and Bārfurūsh is converted to al-Bārfurūshī. </li>
                     <li>The list encompasses Shiʿite scholars from Bahrain, Indian subcontinent, Iraq, Iran, Kuwait, Lebanon, Syria, amongst few other regions without making any distinction of their Akhbārī, Uṣūlī, Shaykhī or any other doctrinal or jurisprudential tendencies. There might be scholars whose are perceived to be Sunnis or their Shiʿi adherence is questionable. I have included them owning the fact that they have contributed and participated in the Shiʿi intellectual tradition. </li>
                 </ul>
+                <div className="row">
+                    <div className="col-9">
                 <p>I look forward to reading your comments, feedback and, most importantly, corrections via shiidates@shiidates.net.</p>
-                <p className="introSignature">Kumail Rajani</p>
+                        <p>Kumail Rajani</p>
+                        <p className="introSignature">Research Fellow</p>
+                        <p className="introSignature">Institute of Arab and Islamic Studies</p>
+                        <p className="introSignature">University of Exeter</p>
+                        <p className="introSignature">Stocker Road, Exeter, EX4 4ND.</p>
+                        <p className="introSignature">Law, Authority and Learning in Imami Shiʿite Islam: <a target="_blank" href="http://www.lawalisi.eu">www.lawalisi.eu</a></p>
+                    </div>
+                    <div className="col-3">
+                        <img src={Logo} className="erclogo" alt="Logo"/>
+                    </div>
+                </div>
+                {/* <p>Kumail Rajani</p>
                 <p className="introSignature">Research Fellow</p>
                 <p className="introSignature">Institute of Arab and Islamic Studies</p>
                 <p className="introSignature">University of Exeter</p>
                 <p className="introSignature">Stocker Road, Exeter, EX4 4ND.</p>
-                <p className="introSignature">Law, Authority and Learning in Imami Shiʿite Islam: <a target="_blank" href="http://www.lawalisi.eu">www.lawalisi.eu</a></p>
+                <p className="introSignature">Law, Authority and Learning in Imami Shiʿite Islam: <a target="_blank" href="http://www.lawalisi.eu">www.lawalisi.eu</a></p> */}
             </Jumbotron>
         </>
     )

@@ -17,18 +17,18 @@ const HomePage = ({ scholarsData }) => {
     <>
       <Navbar />
       <div className="introHeading">
-        <h4 style={{display: 'inline-block'}}>Shii Dates</h4> ~ <span>Collected, arranged and managed by Kumail Rajani</span>
+        <h4>Shii Dates</h4> <p>~collected, arranged and managed by Kumail Rajani</p>
       </div>
       {final.length > 0 ? (
       <Container fluid={true} style={{position: 'fixed'}}>
           <Row>
-          <Col xs={2} style={{height: 'calc(100vh - 196px)', overflow: 'scroll', backgroundColor: '#f8f9fa'}}>
+          <Col xs={2} className="centuriesColumn">
           <h4>Centuries</h4>
             {
               final.map((_, i) => <p key={i}><a className="centuryLink" href={`#${i+2}`}>{i+2}/{i+8}</a></p>)
             }
           </Col>
-          <Col style={{height: 'calc(100vh - 196px)', overflow: 'scroll'}}>
+          <Col style={{height: 'calc(100vh - 115px)', overflow: 'scroll'}}>
             {
               final.map((arr, i) => {
                 return (

@@ -15,18 +15,33 @@ a.centuryLink {
 }
 
 .introSignature {
-    margin-top: -10px;
+    margin-top: -16px;
 }
 
 .erclogo {
     height: 200px;
-    margin-bottom: -50px;
-    margin-top: -20px;
 }
 
 .introHeading {
-    background-color: rgb(248, 249, 250);
-    padding: 0 15px;
+    /* background-color: rgb(248, 249, 250); */
+    background-color: #c2c2c2;
+    padding: 0 25px;
+    padding-bottom: 10px;
+}
+
+.centuriesColumn {
+    height: calc(100vh - 116px);
+    overflow: scroll;
+    background-color: #c2c2c2;
+    text-align: center;
+}
+
+a.nav-link {
+    color: #000 !important;
+}
+
+nav.navbar-fixed-top {
+    background-color: #c2c2c2 !important;
 }
 
 #container {
