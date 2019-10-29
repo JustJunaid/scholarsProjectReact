@@ -16,19 +16,16 @@ const HomePage = ({ scholarsData }) => {
   return (
     <>
       <Navbar />
-      <div className="introHeading">
-        <h4>Shii Dates</h4> <p>~collected, arranged and managed by Kumail Rajani</p>
-      </div>
       {final.length > 0 ? (
       <Container fluid={true} style={{position: 'fixed'}}>
           <Row>
           <Col xs={2} className="centuriesColumn">
-          <h4>Centuries</h4>
-            {
-              final.map((_, i) => <p key={i}><a className="centuryLink" href={`#${i+2}`}>{i+2}/{i+8}</a></p>)
-            }
+            <h4>Centuries</h4>
+              {
+                final.map((_, i) => <p key={i}><a className="centuryLink" href={`#${i+2}`}>{i+2}/{i+8}</a></p>)
+              }
           </Col>
-          <Col style={{height: 'calc(100vh - 115px)', overflow: 'scroll'}}>
+          <Col className="scholarsColumn">
             {
               final.map((arr, i) => {
                 return (

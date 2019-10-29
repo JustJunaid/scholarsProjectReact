@@ -37,12 +37,6 @@ export default function Introduction() {
                         <img src={Logo} className="erclogo" alt="Logo"/>
                     </div>
                 </div>
-                {/* <p>Kumail Rajani</p>
-                <p className="introSignature">Research Fellow</p>
-                <p className="introSignature">Institute of Arab and Islamic Studies</p>
-                <p className="introSignature">University of Exeter</p>
-                <p className="introSignature">Stocker Road, Exeter, EX4 4ND.</p>
-                <p className="introSignature">Law, Authority and Learning in Imami Shiʿite Islam: <a target="_blank" href="http://www.lawalisi.eu">www.lawalisi.eu</a></p> */}
             </Jumbotron>
         </>
     )

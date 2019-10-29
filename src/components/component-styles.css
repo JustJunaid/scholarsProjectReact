@@ -14,6 +14,12 @@ a.centuryLink {
     color: #000;
 }
 
+div.rowHomePage {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #eeddbb;
+}
+
 .introSignature {
     margin-top: -16px;
 }
@@ -24,16 +30,23 @@ a.centuryLink {
 
 .introHeading {
     /* background-color: rgb(248, 249, 250); */
-    background-color: #c2c2c2;
+    background-color: #eeddbb;
     padding: 0 25px;
-    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .centuriesColumn {
-    height: calc(100vh - 116px);
+    height: calc(100vh - 95px);
     overflow: scroll;
-    background-color: #c2c2c2;
+    background-color: #eeddbb;
     text-align: center;
+    border-right: 7px solid #c19a6b;
+}
+
+.scholarsColumn {
+    height: calc(100vh - 95px);
+    overflow: scroll;
+    border-top: 7px solid #c19a6b;
 }
 
 a.nav-link {
@@ -41,7 +54,10 @@ a.nav-link {
 }
 
 nav.navbar-fixed-top {
-    background-color: #c2c2c2 !important;
+    background-color: #eeddbb !important;
+    float: right;
+    padding-bottom: 30px;
+    padding-top: 25px;
 }
 
 #container {
