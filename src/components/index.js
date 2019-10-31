@@ -20,7 +20,7 @@ const HomePage = ({ scholarsData }) => {
       <Container fluid={true} style={{position: 'fixed'}}>
           <Row>
           <Col xs={2} className="centuriesColumn">
-            <h4>Centuries</h4>
+            <h6>Centuries</h6>
               {
                 final.map((_, i) => <p key={i}><a className="centuryLink" href={`#${i+2}`}>{i+2}/{i+8}</a></p>)
               }
