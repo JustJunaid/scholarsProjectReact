@@ -78,10 +78,10 @@ const HomePage = ({ scholarsData }) => {
                       </thead>
                       <tbody>
                         {arr.map(obj => {
-                          const { scholarName, death } = obj;
+                          const { scholarName, death, color } = obj;
                           return (
                             <>
-                              <tr>
+                              <tr style={{ backgroundColor: color }}>
                                 <td>{scholarName}</td>
                                 <td>{death}</td>
                               </tr>
