@@ -78,12 +78,12 @@ const HomePage = ({ scholarsData }) => {
                       </thead>
                       <tbody>
                         {arr.map(obj => {
-                          const { scholarName, moreInfo } = obj;
+                          const { scholarName, death } = obj;
                           return (
                             <>
                               <tr>
                                 <td>{scholarName}</td>
-                                <td>{moreInfo}</td>
+                                <td>{death}</td>
                               </tr>
                             </>
                           );
