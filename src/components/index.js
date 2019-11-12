@@ -50,7 +50,9 @@ const HomePage = ({ scholarsData }) => {
         <Container fluid={true} style={{ position: "fixed" }}>
           <Row>
             <Col xs={2} className="centuriesColumn">
-              <p>Centuries (AH/CE)</p>
+              <p>
+                <b>Centuries (AH/CE)</b>
+              </p>
               {final.map((_, i) => (
                 <p key={i}>
                   <a className="centuryLink" href={`#${i + 2}`}>
