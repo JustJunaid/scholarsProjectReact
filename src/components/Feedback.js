@@ -78,12 +78,12 @@ const FeedbackPage = () => {
                 ></textarea>
               </div>
               <Recaptcha
-                sitekey={"6LdOo74UAAAAAL-eQR5HFw29GsKTxh3FHdGyNgcY"}
+                sitekey={"6LcDcMIUAAAAAAgYLoWzAYCels9haMF_ozl_whMA"}
                 render="explicit"
                 verifyCallback={verifyCallback}
                 // onloadCallback={onloadCallback}
               />
-              <Button variant="primary" type="submit" disabled={false}>
+              <Button variant="primary" type="submit" disabled={notVerified}>
                 Submit
               </Button>
             </form>
