@@ -91,7 +91,7 @@ const FeedbackPage = () => {
                   verifyCallback={verifyCallback}
                   // onloadCallback={onloadCallback}
                 />
-                <Button variant="primary" type="submit" disabled={false}>
+                <Button variant="primary" type="submit" disabled={notVerified}>
                   Submit
                 </Button>
               </form>
