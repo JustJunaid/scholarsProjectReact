@@ -12,7 +12,7 @@ const isEqual = require("lodash.isequal");
 
 export const getFirebaseData = async () => {
   let scholarsDataObj = {};
-  for (let century = 2; century <= 15; century++) {
+  for (let century = 2; century <= 2; century++) {
     const colRef = firestore.collection(`${century}`).orderBy("sortingKey");
     const snapshot = await colRef.get();
     let scholarDataPerCentury = [];

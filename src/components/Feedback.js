@@ -10,9 +10,11 @@ const FeedbackPage = () => {
   const [notVerified, setNotVerified] = useState(true);
   const [formData, setFormData] = useState({});
   const [mailSent, setMailSent] = useState(false);
+  const [isLoading, setIsloading] = useState(false);
   let history = useHistory();
 
   const onSubmit = async e => {
+    setIsloading(true);
     e.preventDefault();
     await axios.post(
       "https://us-central1-scholarproject-8c03a.cloudfunctions.net/widgets/sendFeedbackMail",
@@ -21,6 +23,7 @@ const FeedbackPage = () => {
       }
     );
     setMailSent(true);
+    setIsloading(false);
     setTimeout(() => history.push("/"), 1500);
   };
 
@@ -43,50 +46,56 @@ const FeedbackPage = () => {
                 Mail Sent successfully!
               </div>
             )}
-            <form onSubmit={onSubmit} method="GET">
-              <Form.Group controlId="formBasicName">
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  name="name"
-                  onChange={handleChange}
-                  type="text"
-                  placeholder="Enter Name"
-                  required
-                />
-              </Form.Group>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  name="email"
-                  onChange={handleChange}
-                  type="email"
-                  placeholder="Enter email"
-                  required
-                />
-              </Form.Group>
-              <div className="form-group">
-                <label for="exampleFormControlTextarea1">
-                  Enter Your Feedback here!
-                </label>
-                <textarea
-                  name="feedbackValue"
-                  onChange={handleChange}
-                  className="form-control"
-                  id="exampleFormControlTextarea1"
-                  rows="4"
-                  required
-                ></textarea>
+            {isLoading ? (
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
               </div>
-              <Recaptcha
-                sitekey={"6LcDcMIUAAAAAAgYLoWzAYCels9haMF_ozl_whMA"}
-                render="explicit"
-                verifyCallback={verifyCallback}
-                // onloadCallback={onloadCallback}
-              />
-              <Button variant="primary" type="submit" disabled={notVerified}>
-                Submit
-              </Button>
-            </form>
+            ) : (
+              <form onSubmit={onSubmit} method="GET">
+                <Form.Group controlId="formBasicName">
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control
+                    name="name"
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="Enter Name"
+                    required
+                  />
+                </Form.Group>
+                <Form.Group controlId="formBasicEmail">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    name="email"
+                    onChange={handleChange}
+                    type="email"
+                    placeholder="Enter email"
+                    required
+                  />
+                </Form.Group>
+                <div className="form-group">
+                  <label for="exampleFormControlTextarea1">
+                    Enter Your Feedback here!
+                  </label>
+                  <textarea
+                    name="feedbackValue"
+                    onChange={handleChange}
+                    className="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="4"
+                    required
+                  ></textarea>
+                </div>
+                <Recaptcha
+                  sitekey={"6LcDcMIUAAAAAAgYLoWzAYCels9haMF_ozl_whMA"}
+                  render="explicit"
+                  verifyCallback={verifyCallback}
+                  // onloadCallback={onloadCallback}
+                />
+                <Button variant="primary" type="submit" disabled={false}>
+                  Submit
+                </Button>
+              </form>
+            )}
           </div>
           <div className="col-3">
             <img src={Logo} className="erclogo" alt="Logo" />
