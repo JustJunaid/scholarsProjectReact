@@ -321,7 +321,11 @@ export default function References() {
         </ul>
         <h1>Digital Reference and Encyclopaedia</h1>
         <p>
-          <a target="_blank" href="http://en.wikishia.net/view/Main_Page">
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="http://en.wikishia.net/view/Main_Page"
+          >
             http://en.wikishia.net/view/Main_Page
           </a>
         </p>

@@ -8,43 +8,47 @@ import Introduction from "./components/Introduction";
 import References from "./components/References";
 import { firestore } from "./firebase";
 
-const isEqual = require("lodash.isequal");
+import { sortedData as scholarsDataObj } from "./data";
 
-export const getFirebaseData = async () => {
-  let scholarsDataObj = {};
-  for (let century = 2; century <= 15; century++) {
-    const colRef = firestore.collection(`${century}`).orderBy("sortingKey");
-    const snapshot = await colRef.get();
-    let scholarDataPerCentury = [];
-    snapshot.docs.map(doc => {
-      scholarDataPerCentury = [...scholarDataPerCentury, doc.data()];
-    });
-    scholarsDataObj[century] = scholarDataPerCentury;
-  }
-  return scholarsDataObj;
-};
+// const isEqual = require("lodash.isequal");
+// const scholarsDataObj = sort(scholarsDataObj)
+
+// export const getFirebaseData = async () => {
+//   let scholarsDataObj = {};
+//   for (let century = 2; century <= 15; century++) {
+//     const colRef = firestore.collection(`${century}`).orderBy("sortingKey");
+//     const snapshot = await colRef.get();
+//     let scholarDataPerCentury = [];
+//     snapshot.docs.map(doc => {
+//       scholarDataPerCentury = [...scholarDataPerCentury, doc.data()];
+//     });
+//     scholarsDataObj[century] = scholarDataPerCentury;
+//   }
+//   return scholarsDataObj;
+// };
 
 const App = () => {
   const [scholarsData, setScholarsData] = useState({});
 
-  const populateData = async () => {
-    const localStorageData = localStorage.getItem("scholarsDataObj");
-    if (localStorageData) {
-      const parsedData = JSON.parse(localStorageData);
-      setScholarsData(parsedData);
-      const newScholarsDataObj = await getFirebaseData();
-      if (isEqual(newScholarsDataObj, parsedData)) return;
-      setScholarsData(newScholarsDataObj);
-      return;
-    }
+  // const populateData = async () => {
+  //   const localStorageData = localStorage.getItem("scholarsDataObj");
+  //   if (localStorageData) {
+  //     const parsedData = JSON.parse(localStorageData);
+  //     setScholarsData(parsedData);
+  //     const newScholarsDataObj = await getFirebaseData();
+  //     if (isEqual(newScholarsDataObj, parsedData)) return;
+  //     setScholarsData(newScholarsDataObj);
+  //     return;
+  //   }
 
-    const scholarsDataObj = await getFirebaseData();
-    setScholarsData(scholarsDataObj);
-    localStorage.setItem("scholarsDataObj", JSON.stringify(scholarsDataObj));
-  };
+  //   const scholarsDataObj = await getFirebaseData();
+  //   setScholarsData(scholarsDataObj);
+  //   localStorage.setItem("scholarsDataObj", JSON.stringify(scholarsDataObj));
+  // };
 
   useEffect(() => {
-    populateData();
+    // populateData();
+    setScholarsData(scholarsDataObj);
   }, []);
 
   return (

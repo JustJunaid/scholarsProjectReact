@@ -42,18 +42,17 @@ const HomePage = ({ scholarsData }) => {
     if (n % 10 === 0) return deca[Math.floor(n / 10) - 2] + "ieth";
     return deca[Math.floor(n / 10) - 2] + "y-" + special[n % 10];
   };
-  const final = Object.values(scholarsData);
   return (
     <>
       <Navbar />
-      {final.length > 0 ? (
+      {scholarsData.length > 0 ? (
         <Container fluid={true} style={{ position: "fixed" }}>
           <Row>
             <Col xs={2} className="centuriesColumn">
               <p>
                 <b>Centuries (AH/CE)</b>
               </p>
-              {final.map((_, i) => (
+              {scholarsData.map((_, i) => (
                 <p key={i}>
                   <a className="centuryLink" href={`#${i + 2}`}>
                     {i + 2}/{i + 8}
@@ -62,7 +61,7 @@ const HomePage = ({ scholarsData }) => {
               ))}
             </Col>
             <Col className="scholarsColumn">
-              {final.map((arr, i) => {
+              {scholarsData.map((arr, i) => {
                 return (
                   <div id={i + 2}>
                     <h2>
@@ -79,7 +78,7 @@ const HomePage = ({ scholarsData }) => {
                         </tr>
                       </thead>
                       <tbody>
-                        {arr.map(obj => {
+                        {Object.values(arr)[0].map(obj => {
                           const { scholarName, death, color } = obj;
                           return (
                             <>

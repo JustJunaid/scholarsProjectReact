@@ -4,8 +4,10 @@ import NavbarComponent from "./Navbar";
 
 const Stats = ({ scholarsData }) => {
   let rowsArray = [];
-  for (let i = 2; i < 16; i++) {
-    rowsArray.push(scholarsData[i] ? scholarsData[i].length : 0);
+  for (let i = 0; i < 15; i++) {
+    rowsArray.push(
+      scholarsData[i] ? Object.values(scholarsData[i])[0].length : 0
+    );
   }
   const data = {
     labels: [
